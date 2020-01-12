@@ -17,7 +17,7 @@
     <version>0.0.1</version>
 
     <modules>
-        <module>manager</module>
+        <module>usermanager</module>
         <module>file</module>
     </modules>
 
