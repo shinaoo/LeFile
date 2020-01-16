@@ -24,7 +24,7 @@ public class UserController {
     @PostMapping
     @ApiOperation("添加用户的接口")
     @ApiImplicitParam(name = "username",value = "default",defaultValue = "default")
-    public boolean addUser(String username){
+    public boolean addUser(@PathVariable(name = "username")String userName,@PathVariable(name = "password")String passwd){
 
         return true;
     }

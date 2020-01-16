@@ -20,12 +20,12 @@ public class FileController {
 
     @PostMapping
     @ResponseBody
-    public String upload(MultipartFile file){
-        String fileName = file.getOriginalFilename();
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));
-        String filepath="";
-
-        return "success";
+    public String upload(MultipartFile file)throws Exception{
+        System.out.println("name:" + file.getName());
+        System.out.println("origin:"+file.getOriginalFilename());
+        File localFile = new File("E:\\",file.getName());
+        file.transferTo(localFile);
+        return "success:" + localFile.getAbsolutePath();
     }
 
     @GetMapping("/{id}")
