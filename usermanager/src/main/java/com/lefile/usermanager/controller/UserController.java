@@ -5,15 +5,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-/**
- *  /user               ->post 添加
- *  /user/{id}          ->get 获取user信息
- *  /user/{id}          ->delete 删除用户信息
- *  /user/{id}          ->put   更新用户信息
- */
-@RestController
+@Controller
 @Api(tags = "用户管理相关接口")
 @RequestMapping("/user")
 public class UserController {
