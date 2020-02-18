@@ -2,6 +2,7 @@ package com.lefile.usermanager.service;
 
 import com.lefile.usermanager.dao.mysql.UserDao;
 import com.lefile.usermanager.entity.User;
+import com.lefile.usermanager.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,18 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    private boolean addUser(User user){
-        
+    public JsonResult addUser(User user){
+        return JsonResult.ok();
+    }
+
+    public JsonResult getUserById(long id){
+        return new User();
+    }
+
+    public JsonResult deleteUserById(long id){
         return true;
     }
+
+
 
 }
