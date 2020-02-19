@@ -1,16 +1,22 @@
 package com.lefile.usermanager.entity;
 
 public class User {
+
+    public static int DEFAULT_LIMIT = 10;
+
     private long id;
-    private String name;
-    private String password;
+    private String username;
+    private String passwd;
+    private int projLimit;
 
     public User() {
     }
 
-    public User(String name, String password) {
-        this.name = name;
-        this.password = password;
+    public User(String username, String passwd, int projLimit) {
+        this.id = id;
+        this.username = username;
+        this.passwd = passwd;
+        this.projLimit = projLimit;
     }
 
     public long getId() {
@@ -21,19 +27,37 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswd() {
+        return passwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public int getProjLimit() {
+        return projLimit;
+    }
+
+    public void setProjLimit(int projLimit) {
+        this.projLimit = projLimit;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", projLimit=" + projLimit +
+                '}';
     }
 }

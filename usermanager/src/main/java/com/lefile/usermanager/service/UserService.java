@@ -17,11 +17,15 @@ public class UserService {
     }
 
     public JsonResult getUserById(long id){
-        return new User();
+        return JsonResult.ok();
     }
 
     public JsonResult deleteUserById(long id){
-        return true;
+        return JsonResult.ok();
+    }
+
+    public JsonResult updateUser(){
+        return JsonResult.ok();
     }
 
 
