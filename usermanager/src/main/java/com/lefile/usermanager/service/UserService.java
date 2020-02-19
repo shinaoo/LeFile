@@ -24,6 +24,10 @@ public class UserService {
         return JsonResult.ok();
     }
 
+    public JsonResult deleteUserByName(String username){
+        return JsonResult.ok();
+    }
+
     public JsonResult updateUser(){
         return JsonResult.ok();
     }
