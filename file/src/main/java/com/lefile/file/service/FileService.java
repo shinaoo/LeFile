@@ -12,7 +12,7 @@ public class FileService {
 
     public JsonResult addFile(String userName, String projectName, MultipartFile file) {
         try {
-            File file_local = new File("D:\\apache", file.getOriginalFilename());
+            File file_local = new File("/opt/files", file.getOriginalFilename());
             file.transferTo(file_local);
             return JsonResult.ok("path:" + file_local.getAbsolutePath());
         } catch (IOException e) {

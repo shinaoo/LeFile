@@ -50,7 +50,7 @@ public class FileController {
         String projectName = request.getParameter("projectName");
         String userName = request.getParameter("userName");
 //        File file = new File(String.format("D:\\%s\\%s\\%s", userName, projectName, fileName));
-        File file = new File("D:\\apache\\USBWriter.exe");
+        File file = new File("/opt/files",fileName);
         if (file.exists()) {
             FileInputStream fis = null;
             try {

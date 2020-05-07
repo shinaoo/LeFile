@@ -20,25 +20,25 @@ import java.io.FileInputStream;
 @SpringBootTest(classes = FileApplication.class)
 public class FileTest {
 
-    @Autowired
-    private WebApplicationContext wac;
-
-    private MockMvc mvc;
-
-    @Before
-    public void setup(){
-        System.out.println("setup run");
-        mvc = MockMvcBuilders.webAppContextSetup(wac).build();
-    }
-
-    @Test
-    public void fileUploadTest() throws Exception{
-        MockMultipartFile mockMultipartFile = new MockMultipartFile("file","test.txt","multipart/form-data",new FileInputStream(new File("D:\\test.txt")));
-        String file = mvc.perform(MockMvcRequestBuilders.fileUpload("/file")
-                .file(mockMultipartFile))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn().getResponse().getContentAsString();
-        System.out.println(file);
-    }
+//    @Autowired
+//    private WebApplicationContext wac;
+//
+//    private MockMvc mvc;
+//
+//    @Before
+//    public void setup(){
+//        System.out.println("setup run");
+//        mvc = MockMvcBuilders.webAppContextSetup(wac).build();
+//    }
+//
+//    @Test
+//    public void fileUploadTest() throws Exception{
+//        MockMultipartFile mockMultipartFile = new MockMultipartFile("file","test.txt","multipart/form-data",new FileInputStream(new File("D:\\test.txt")));
+//        String file = mvc.perform(MockMvcRequestBuilders.fileUpload("/file")
+//                .file(mockMultipartFile))
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andReturn().getResponse().getContentAsString();
+//        System.out.println(file);
+//    }
 
 }
