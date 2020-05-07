@@ -15,9 +15,9 @@ public class PathController {
     @Autowired
     PathService pathService;
 
-    @RequestMapping("/get")
+    @RequestMapping("/getFiles")
     @ResponseBody
     public JsonResult getPath(@RequestParam("path")String path){
-        return pathService.getPath(path);
+        return pathService.getFiles(path);
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public class ClientService {
 
     public JsonResult login(String name,String password,String token){
+        System.out.println("rcv login:" + name + " " + password + " " +token);
         if ("lanpa".equals(name) && "lanpa".equals(password) && "lanpa".equals(token)){
             return JsonResult.ok();
         }else{
