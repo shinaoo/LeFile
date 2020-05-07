@@ -26,11 +26,16 @@
     <properties>
         <swaggerversion>2.9.2</swaggerversion>
         <springbootversion>2.2.2.RELEASE</springbootversion>
+        <fastjsonversion>1.2.68</fastjsonversion>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjsonversion}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
