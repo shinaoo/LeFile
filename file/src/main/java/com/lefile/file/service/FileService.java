@@ -13,7 +13,6 @@ public class FileService {
 
     public JsonResult addFile(String userName, String projectName, MultipartFile file) {
         try {
-            System.out.println("upload username:" + userName + " project:" + projectName);
             File file_local = new File(Constant.FileRootPath, file.getOriginalFilename());
             file.transferTo(file_local);
             return JsonResult.ok("path:" + file_local.getAbsolutePath());
