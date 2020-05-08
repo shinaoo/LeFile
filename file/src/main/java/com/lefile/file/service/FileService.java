@@ -1,5 +1,6 @@
 package com.lefile.file.service;
 
+import com.lefile.file.utils.Constant;
 import com.lefile.file.utils.JsonResult;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,7 +14,7 @@ public class FileService {
     public JsonResult addFile(String userName, String projectName, MultipartFile file) {
         try {
             System.out.println("upload username:" + userName + " project:" + projectName);
-            File file_local = new File("E:\\", file.getOriginalFilename());
+            File file_local = new File(Constant.FileRootPath, file.getOriginalFilename());
             file.transferTo(file_local);
             return JsonResult.ok("path:" + file_local.getAbsolutePath());
         } catch (IOException e) {

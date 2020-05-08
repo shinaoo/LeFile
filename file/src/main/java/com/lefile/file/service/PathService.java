@@ -2,6 +2,7 @@ package com.lefile.file.service;
 
 import com.alibaba.fastjson.JSON;
 import com.lefile.file.entity.json.PanFile;
+import com.lefile.file.utils.Constant;
 import com.lefile.file.utils.JsonResult;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.List;
 public class PathService {
 
     public JsonResult getFiles(String path){
-        File file = new File("E:\\",path);
+        File file = new File(Constant.FileRootPath,path);
         if (file.exists()){
             if (file.isDirectory()){
                 File[] files = file.listFiles();

@@ -1,6 +1,7 @@
 package com.lefile.file.controller;
 
 import com.lefile.file.service.FileService;
+import com.lefile.file.utils.Constant;
 import com.lefile.file.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
@@ -50,7 +50,7 @@ public class FileController {
         String projectName = request.getParameter("projectName");
         String userName = request.getParameter("userName");
 //        File file = new File(String.format("D:\\%s\\%s\\%s", userName, projectName, fileName));
-        File file = new File("/opt/files",fileName);
+        File file = new File(Constant.FileRootPath,fileName);
         if (file.exists()) {
             FileInputStream fis = null;
             try {
