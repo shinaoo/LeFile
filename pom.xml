@@ -21,6 +21,7 @@
     <modules>
         <module>usermanager</module>
         <module>file</module>
+        <module>AddressKeeper</module>
     </modules>
 
     <properties>

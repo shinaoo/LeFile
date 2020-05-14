@@ -12,6 +12,7 @@ import java.io.IOException;
 public class FileService {
 
     public JsonResult addFile(String userName, String projectName, MultipartFile file) {
+        System.out.println("upload uname:" + userName + " projectName:" + projectName + " filename:" + file.getOriginalFilename());
         try {
             File file_local = new File(Constant.FileRootPath, file.getOriginalFilename());
             file.transferTo(file_local);

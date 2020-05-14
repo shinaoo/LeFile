@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>LeFile</artifactId>
+        <groupId>LeFile</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>AddressKeeper</artifactId>
+    <groupId>com.lefile</groupId>
+    <version>0.0.1</version>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <!-- 对要打的jar包进行配置 -->
+                <configuration>
+                    <!-- Configuration of the archiver -->
+                    <archive>
+                        <!--生成的jar中，不要包含pom.xml和pom.properties这两个文件-->
+                        <addMavenDescriptor>false</addMavenDescriptor>
+
+                        <!-- Manifest specific configuration -->
+                        <manifest>
+                            <mainClass>com.lefile.file.FileApplication</mainClass>
+                            <!--是否要把第三方jar放到manifest的classpath中-->
+                            <addClasspath>true</addClasspath>
+
+                            <!--生成的manifest中classpath的前缀，
+                            因为要把第三方jar放到lib目录下，
+                            所以classpath的前缀是lib/-->
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                    <!--过滤掉不希望包含在jar中的文件-->
+                    <excludes>
+                        <!-- 排除不需要的文件夹(路径是jar包内部的路径) -->
+                        <exclude>**/assembly/</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+</project>

@@ -15,6 +15,7 @@ public class PathService {
 
     public JsonResult getFiles(String path){
         File file = new File(Constant.FileRootPath,path);
+        System.out.println("getfiles:" + path + " file:" + file.getAbsolutePath());
         if (file.exists()){
             if (file.isDirectory()){
                 File[] files = file.listFiles();
